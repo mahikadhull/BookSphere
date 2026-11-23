@@ -110,4 +110,15 @@ public class StudentDAO {
 
     }
 
+    // Delete a student using roll number
+    public boolean deleteStudentByRollNumber(String rollNumber) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getRollNumber().equalsIgnoreCase(rollNumber)) {
+                students.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
