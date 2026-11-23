@@ -7,7 +7,7 @@ import model.Student;
 public class StudentDAO {
 
     // List to store student objects
-    private ArrayList<Student> students;
+    final private ArrayList<Student> students;
 
     // Constructor
     public StudentDAO() {
