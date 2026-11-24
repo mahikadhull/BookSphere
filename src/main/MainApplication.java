@@ -42,7 +42,7 @@ public class MainApplication {
 
         Menu menu = new Menu();
         AdminMenu adminMenu = new AdminMenu();
-        StudentMenu studentMenu = new StudentMenu();
+        StudentMenu studentMenu = new StudentMenu(scanner);
 
         System.out.println("================================");
         System.out.println("       WELCOME TO BOOKSPHERE");
