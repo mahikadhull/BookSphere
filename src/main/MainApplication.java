@@ -17,6 +17,7 @@ import ui.AdminMenu;
 import ui.Menu;
 import ui.StudentMenu;
 
+
 /** Main entry point for the BookSphere Library Management System. */
 public class MainApplication {
 
@@ -42,7 +43,7 @@ public class MainApplication {
 
         Menu menu = new Menu();
         AdminMenu adminMenu = new AdminMenu();
-        StudentMenu studentMenu = new StudentMenu(scanner);
+       StudentMenu studentMenu = new StudentMenu();
 
         System.out.println("================================");
         System.out.println("       WELCOME TO BOOKSPHERE");
