@@ -44,7 +44,7 @@ public class ReservationService {
                    BookUnavailableException, DataAccessException {
 
         // 1. Validate student
-        Student student = studentDAO.findStudentByEmail(studentId);
+        Student student = studentDAO.findStudentById(studentId);
         if (student == null) {
             throw new StudentNotFoundException(
                     "No student found with ID: " + studentId);

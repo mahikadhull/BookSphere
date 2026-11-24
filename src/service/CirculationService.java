@@ -45,9 +45,8 @@ public class CirculationService {
                    DataAccessException {
 
         // 1. Validate student
-        Student student = studentDAO.findStudentByEmail(studentId);
+        Student student = studentDAO.findStudentById(studentId);
         if (student == null) {
-            // Try by userId as well
             throw new StudentNotFoundException(
                     "No student found with ID: " + studentId);
         }
@@ -141,7 +140,7 @@ public class CirculationService {
         }
 
         // 4. Update student's borrow count
-        Student student = studentDAO.findStudentByEmail(loan.getStudentId());
+        Student student = studentDAO.findStudentById(loan.getStudentId());
         if (student != null) {
             student.returnBook();
             studentDAO.updateStudent(student);

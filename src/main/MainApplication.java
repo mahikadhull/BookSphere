@@ -1,11 +1,10 @@
 package main;
 
-import java.util.List;
-import java.util.Scanner;
-
 import dao.BookDAO;
 import dao.StudentDAO;
 import exception.DataAccessException;
+import java.util.List;
+import java.util.Scanner;
 import model.Book;
 import model.BookCopy;
 import model.Category;
@@ -68,7 +67,8 @@ public class MainApplication {
                     break;
                 case 4:
                     running = false;
-                    System.out.println("Thank you for using BookSphere!");
+                    System.out.println("Thank you for using BookSphere.");
+                    System.out.println("We wish to see you back soon! :)");
                     break;
                 default:
                     System.out.println("Invalid choice. Please select 1, 2, 3 or 4.");
@@ -202,7 +202,7 @@ public class MainApplication {
                     System.out.print("Shelf number: "); String shelf = scanner.nextLine().trim();
                     System.out.print("Number of copies: "); int copies = readInt(scanner);
                     if (id.isEmpty() || title.isEmpty() || author.isEmpty() || isbn.isEmpty()
-                            || publisher.isEmpty() || categoryName.isEmpty() || copies < 0) {
+                            || publisher.isEmpty() || categoryName.isEmpty() || copies <= 0) {
                         System.out.println("Please enter valid, non-empty book details.");
                         break;
                     }

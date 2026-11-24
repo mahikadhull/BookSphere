@@ -1,5 +1,9 @@
 package model;
 
-public class BookReview {
-    
+import java.io.Serializable;
+
+public class BookReview implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
 }

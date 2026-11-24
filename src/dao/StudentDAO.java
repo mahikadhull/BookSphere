@@ -2,17 +2,18 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.List;
 import model.Student;
 
 public class StudentDAO {
 
     // List to store student objects
-    final private ArrayList<Student> students;
+    private final List<Student> students;
 
     // Constructor
     public StudentDAO() {
 
-        students = new ArrayList<Student>();
+        students = new ArrayList<>();
 
     }
 
@@ -20,6 +21,21 @@ public class StudentDAO {
     public void addStudent(Student student) {
 
         students.add(student);
+
+    }
+
+    // Find student using user ID
+    public Student findStudentById(String userId) {
+
+        for (Student student : students) {
+
+            if (student.getUserId().equalsIgnoreCase(userId)) {
+                return student;
+            }
+
+        }
+
+        return null;
 
     }
 
@@ -54,9 +70,9 @@ public class StudentDAO {
     }
 
     // Get all registered students
-    public ArrayList<Student> getAllStudents() {
+    public List<Student> getAllStudents() {
 
-        return students;
+        return new ArrayList<>(students);
 
     }
 

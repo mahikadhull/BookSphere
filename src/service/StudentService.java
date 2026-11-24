@@ -3,12 +3,12 @@ package service;
 
 import dao.StudentDAO;
 import exception.StudentNotFoundException;
-import java.util.ArrayList;
+import java.util.List;
 import model.Student;
 
 public class StudentService {
 
-    final private StudentDAO studentDAO;
+    private final StudentDAO studentDAO;
 
     // Constructor
     public StudentService(StudentDAO studentDAO) {
@@ -130,7 +130,7 @@ public class StudentService {
     }
 
     // Get all registered students
-    public ArrayList<Student> getAllStudents() {
+    public List<Student> getAllStudents() {
 
         return studentDAO.getAllStudents();
 

@@ -27,11 +27,10 @@ public class FileStorageDAO {
 
             File file = new File(folder, fileName);
 
-            ObjectOutputStream output =
-                    new ObjectOutputStream(new FileOutputStream(file));
-
-            output.writeObject(data);
-            output.close();
+            try (ObjectOutputStream output =
+                    new ObjectOutputStream(new FileOutputStream(file))) {
+                output.writeObject(data);
+            }
 
         } catch (Exception e) {
             throw new DataAccessException(
@@ -49,12 +48,10 @@ public class FileStorageDAO {
             throw new DataAccessException("Data file not found: " + fileName);
         }
 
-        try {
-            ObjectInputStream input =
-                    new ObjectInputStream(new FileInputStream(file));
+        try (ObjectInputStream input =
+                new ObjectInputStream(new FileInputStream(file))) {
 
             Object data = input.readObject();
-            input.close();
 
             return type.cast(data);
 
